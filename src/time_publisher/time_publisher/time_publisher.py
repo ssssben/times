@@ -12,12 +12,10 @@ class TimePublisher(Node):
         self.get_logger().info('TimePublisher node has started.')
 
     def timer_callback(self):
-        # 現在の時刻を取得し、文字列としてメッセージを作成
         current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         msg = String()
         msg.data = f"Current time: {current_time}"
         
-        # 時刻情報をパブリッシュ
         self.publisher_.publish(msg)
         self.get_logger().info(f'Publishing: "{msg.data}"')
 
