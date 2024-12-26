@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/time_publisher/time_publisher.egg-info/PKG-INFO
+../../build/time_publisher/time_publisher.egg-info/SOURCES.txt
+../../build/time_publisher/time_publisher.egg-info/dependency_links.txt
+../../build/time_publisher/time_publisher.egg-info/entry_points.txt
+../../build/time_publisher/time_publisher.egg-info/requires.txt
+../../build/time_publisher/time_publisher.egg-info/top_level.txt
+../../build/time_publisher/time_publisher.egg-info/zip-safe
+resource/time_publisher
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
+time_publisher/__init__.py
+time_publisher/time_publisher.py

@@ -1,0 +1,37 @@
+[0.467s] Invoking command in '/home/bun/ros2_times_ws/src/time_publisher': PYTHONPATH=/home/bun/ros2_times_ws/build/time_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/time_publisher build --build-base /home/bun/ros2_times_ws/build/time_publisher/build install --record /home/bun/ros2_times_ws/build/time_publisher/install.log --install-scripts $base/lib/time_publisher --single-version-externally-managed install_data
+[0.584s] running egg_info
+[0.584s] creating ../../build/time_publisher/time_publisher.egg-info
+[0.585s] writing ../../build/time_publisher/time_publisher.egg-info/PKG-INFO
+[0.585s] writing dependency_links to ../../build/time_publisher/time_publisher.egg-info/dependency_links.txt
+[0.585s] writing entry points to ../../build/time_publisher/time_publisher.egg-info/entry_points.txt
+[0.585s] writing requirements to ../../build/time_publisher/time_publisher.egg-info/requires.txt
+[0.585s] writing top-level names to ../../build/time_publisher/time_publisher.egg-info/top_level.txt
+[0.591s] writing manifest file '../../build/time_publisher/time_publisher.egg-info/SOURCES.txt'
+[0.614s] reading manifest file '../../build/time_publisher/time_publisher.egg-info/SOURCES.txt'
+[0.614s] writing manifest file '../../build/time_publisher/time_publisher.egg-info/SOURCES.txt'
+[0.614s] running build
+[0.614s] running build_py
+[0.614s] creating /home/bun/ros2_times_ws/build/time_publisher/build
+[0.614s] creating /home/bun/ros2_times_ws/build/time_publisher/build/lib
+[0.615s] creating /home/bun/ros2_times_ws/build/time_publisher/build/lib/time_publisher
+[0.615s] copying time_publisher/__init__.py -> /home/bun/ros2_times_ws/build/time_publisher/build/lib/time_publisher
+[0.615s] copying time_publisher/time.py -> /home/bun/ros2_times_ws/build/time_publisher/build/lib/time_publisher
+[0.615s] running install
+[0.616s] running install_lib
+[0.616s] creating /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher
+[0.616s] copying /home/bun/ros2_times_ws/build/time_publisher/build/lib/time_publisher/__init__.py -> /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher
+[0.616s] copying /home/bun/ros2_times_ws/build/time_publisher/build/lib/time_publisher/time.py -> /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher
+[0.617s] byte-compiling /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher/__init__.py to __init__.cpython-38.pyc
+[0.618s] byte-compiling /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher/time.py to time.cpython-38.pyc
+[0.618s] running install_data
+[0.618s] creating /home/bun/ros2_times_ws/install/time_publisher/share/ament_index
+[0.619s] creating /home/bun/ros2_times_ws/install/time_publisher/share/ament_index/resource_index
+[0.619s] creating /home/bun/ros2_times_ws/install/time_publisher/share/ament_index/resource_index/packages
+[0.619s] copying resource/time_publisher -> /home/bun/ros2_times_ws/install/time_publisher/share/ament_index/resource_index/packages
+[0.619s] copying package.xml -> /home/bun/ros2_times_ws/install/time_publisher/share/time_publisher
+[0.619s] running install_egg_info
+[0.620s] Copying ../../build/time_publisher/time_publisher.egg-info to /home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages/time_publisher-0.0.1-py3.8.egg-info
+[0.621s] running install_scripts
+[0.632s] Installing time_publisher script to /home/bun/ros2_times_ws/install/time_publisher/lib/time_publisher
+[0.632s] writing list of installed files to '/home/bun/ros2_times_ws/build/time_publisher/install.log'
+[0.646s] Invoked command in '/home/bun/ros2_times_ws/src/time_publisher' returned '0': PYTHONPATH=/home/bun/ros2_times_ws/build/time_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/bun/ros2_times_ws/install/time_publisher/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/time_publisher build --build-base /home/bun/ros2_times_ws/build/time_publisher/build install --record /home/bun/ros2_times_ws/build/time_publisher/install.log --install-scripts $base/lib/time_publisher --single-version-externally-managed install_data

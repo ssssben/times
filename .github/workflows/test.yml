@@ -1,0 +1,39 @@
+name: Test ROS 2 Package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: リポジトリをチェックアウト
+      uses: actions/checkout@v2
+
+    - name: ROS 2をセットアップ
+      uses: ros-tooling/setup-ros@v0.2.0
+      with:
+        ros-distro: humble  # 必要に応じてROSのディストリビューションを変更してください
+
+    - name: 依存関係をインストール
+      run: |
+        sudo apt update
+        sudo apt install -y python3-colcon-common-extensions
+        python3 -m pip install -r requirements.txt
+
+    - name: パッケージをビルド
+      run: |
+        colcon build --packages-select time_publisher
+        . install/setup.bash
+
+    - name: テストを実行
+      run: |
+        colcon test --packages-select time_publisher
+        colcon test-result --verbose
+

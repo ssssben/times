@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: time-publisher
+Version: 0.0.1
+Summary: 時刻を発行するシンプルなROS 2パッケージ。
+Home-page: UNKNOWN
+Maintainer: bun
+Maintainer-email: vlongbf@gmail.com
+License: Apache-2.0
+Description: UNKNOWN
+Platform: UNKNOWN

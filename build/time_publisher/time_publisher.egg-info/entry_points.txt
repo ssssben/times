@@ -1,0 +1,3 @@
+[console_scripts]
+time_publisher = time_publisher.time_publisher:main
+
