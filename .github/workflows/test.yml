@@ -17,7 +17,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: ROS 2をセットアップ
-      uses: ros-tooling/setup-ros@latest
+      uses: ros-tooling/setup-ros@v0.3.0
       with:
         ros-distro: humble  # 必要に応じてROSのディストリビューションを変更してください
 
