@@ -19,17 +19,13 @@ jobs:
 
       - name: Build and test
         run: |
-          # リポジトリ内容を ROS 2 ワークスペースにコピー
-          rsync -av ./ /root/ros2_times_ws/src/time_publisher/
+          rsync -av ./ /root/ros2_times_ws/src/time_publisher/time_publisher/
           
-          # ROS 2 ワークスペースディレクトリに移動
           cd /root/ros2_times_ws
           
-          # 依存関係のインストール（必要なら）
           rosdep update
           rosdep install --from-paths src --ignore-src --rosdistro humble -y
           
-          # ビルドとテストの実行
           colcon build --symlink-install
           bash -xv ./src/time_publisher/test/test.bash /root
 
