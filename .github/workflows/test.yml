@@ -19,7 +19,7 @@ jobs:
 
       - name: Build and test
         run: |
-          rsync -av ./ /root/ros2_times_ws/src/time_publisher/time_publisher/
+          rsync -av ./ /root/ros2_times_ws/src/
           
           cd /root/ros2_times_ws
           
