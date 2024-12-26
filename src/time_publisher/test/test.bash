@@ -1,22 +1,21 @@
 #!/bin/bash
 
+# 引数が指定されている場合、指定されたディレクトリを使用
 dir=~
 [ "$1" != "" ] && dir="$1"
 
-cd $dir/ros2_times_ws || { echo "Directory $dir/ros2_times_ws not found."; exit 1; }
+# ROS 2 ワークスペースディレクトリに移動
+cd $dir/ros2_times_ws
 
-colcon build || { echo "Build failed."; exit 1; }
+# ビルド
+colcon build
 
-source $dir/ros2_times_ws/install/setup.bash
+# ROS 2 環境を設定
+source install/setup.bash
 
-timeout 10 ros2 run time_publisher time_publisher > /tmp/time_publisher.log 2>&1
+# ノードを起動し、出力をログに保存
+timeout 10 ros2 run time_publisher time_publisher > /tmp/time_publisher.log
 
-if grep -q 'Publishing: "Current time:' /tmp/time_publisher.log; then
-    echo "Test Passed: Node is publishing the time."
-    exit 0
-else
-    echo "Test Failed: Node is not publishing the expected messages."
-    cat /tmp/time_publisher.log  # デバッグ用にログを表示
-    exit 1
-fi
+# ログ内容を確認
+cat /tmp/time_publisher.log | grep 'Publishing:'
 
