@@ -1,13 +1,35 @@
-name: test
-on: push
+name: Test TimePublisher
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-        test:
-                runs-on: ubuntu-22.04
-                container: ryuichiueda/ubuntu22.04-ros2:latest
-                steps:
-                        - uses: actions/checkout@v2
-                          - name: build and test
-                            run: |
-                                    rsync -av ./ /root/ros2_times_ws/src/time_publisher/
-                                    cd /root/ros2_times_ws
-                                    bash -xv ./src/time_publisher/test/test.bash /root
+  test:
+    runs-on: ubuntu-22.04
+    container: ryuichiueda/ubuntu22.04-ros2:latest # コンテナを使用
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2 # コンテナ内のカレントディレクトリにリポジトリを配置
+
+      - name: Build and test
+        run: |
+          # リポジトリ内容を ROS 2 ワークスペースにコピー
+          rsync -av ./ /root/ros2_times_ws/src/time_publisher/
+          
+          # ROS 2 ワークスペースディレクトリに移動
+          cd /root/ros2_times_ws
+          
+          # 依存関係のインストール（必要なら）
+          rosdep update
+          rosdep install --from-paths src --ignore-src --rosdistro humble -y
+          
+          # ビルドとテストの実行
+          colcon build --symlink-install
+          bash -xv ./src/time_publisher/test/test.bash /root
+
