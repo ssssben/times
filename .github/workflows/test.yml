@@ -19,7 +19,7 @@ jobs:
     - name: ROS 2をセットアップ
       uses: ros-tooling/setup-ros@v0.1
       with:
-        ros-distro: humble  # 必要に応じてROSのディストリビューションを変更してください
+        ros-distro: humble
 
     - name: 依存関係をインストール
       run: |
