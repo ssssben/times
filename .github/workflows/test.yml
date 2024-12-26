@@ -17,15 +17,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2 # コンテナ内のカレントディレクトリにリポジトリを配置
 
+      - name: Set up ROS 2 workspace
+        run: |
+          # 必要なディレクトリを作成
+          mkdir -p /root/ros2_times_ws/src/time_publisher
+          
+          # リポジトリ内容を ROS 2 ワークスペースにコピー
+          rsync -av ./ /root/ros2_times_ws/src/time_publisher/
+
       - name: Build and test
         run: |
-          rsync -av ./ /root/ros2_times_ws/src/
-          
+          # ROS 2 ワークスペースディレクトリに移動
           cd /root/ros2_times_ws
           
+          # 依存関係のインストール（必要なら）
           rosdep update
           rosdep install --from-paths src --ignore-src --rosdistro humble -y
           
+          # ワークスペースをビルド
           colcon build --symlink-install
+          
+          # テストスクリプトを実行
           bash -xv ./src/time_publisher/test/test.bash /root
 
